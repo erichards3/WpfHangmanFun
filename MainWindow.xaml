@@ -1,0 +1,331 @@
+﻿<Window x:Class="HangmanFunWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HangmanFunWPF"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Hangman By Eddie"
+        Width="859"
+        Height="630.5"
+        mc:Ignorable="d">
+
+  <Grid Name="gridMain">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="34*" />
+      <ColumnDefinition Width="132*" />
+      <ColumnDefinition Width="132*" />
+      <ColumnDefinition Width="32*" />
+      <ColumnDefinition Width="32*" />
+      <ColumnDefinition Width="32*" />
+      <ColumnDefinition Width="32*" />
+      <ColumnDefinition Width="32*" />
+      <ColumnDefinition Width="32*" />
+      <ColumnDefinition Width="32*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+      <RowDefinition Height="32*" />
+    </Grid.RowDefinitions>
+
+    <Image Name="personImage"
+           Grid.Row="0"
+           Grid.RowSpan="5"
+           Grid.Column="1"
+           Grid.ColumnSpan="2"
+           Source="/Images/image_1.png" />
+
+    <Viewbox Grid.Row="5"
+             Grid.RowSpan="2"
+             Grid.Column="1"
+             Grid.ColumnSpan="2"
+             VerticalAlignment="Top"
+             Stretch="Uniform">
+      <TextBlock Name="secretWord"
+                 FontSize="52"
+                 Text=""
+                 TextAlignment="Center"
+                 Typography.Capitals="AllSmallCaps"
+                 Typography.Kerning="True" />
+    </Viewbox>
+
+    <TextBlock Name="numberWins"
+               Grid.Row="7"
+               Grid.Column="3"
+               Grid.ColumnSpan="4"
+               Padding="8 0 0 0"
+               VerticalAlignment="Top"
+               FontSize="18"
+               Text="Total Wins: 0" />
+
+    <TextBlock Name="numberLosses"
+               Grid.Row="7"
+               Grid.Column="3"
+               Grid.ColumnSpan="4"
+               Padding="8 0 0 0"
+               VerticalAlignment="Bottom"
+               FontSize="18"
+               Text="Total Losses: 0" />
+
+    <Button Name="buttonNewGame"
+            Grid.Row="7"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Margin="16 8 16 8"
+            Click="StartNewGame"
+            Content="New Game"
+            FontSize="18" />
+
+    <Button Name="buttonExit"
+            Grid.Row="7"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            Margin="16 8 16 8"
+            Click="ExitGame"
+            Content="Exit"
+            FontSize="18" />
+
+    <Button Name="buttonA"
+            Grid.Row="1"
+            Grid.Column="3"
+            Margin="8"
+            Click="LetterSelected"
+            Content="A"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonB"
+            Grid.Row="1"
+            Grid.Column="4"
+            Margin="8"
+            Click="LetterSelected"
+            Content="B"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonC"
+            Grid.Row="1"
+            Grid.Column="5"
+            Margin="8"
+            Click="LetterSelected"
+            Content="C"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonD"
+            Grid.Row="1"
+            Grid.Column="6"
+            Margin="8"
+            Click="LetterSelected"
+            Content="D"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonE"
+            Grid.Row="1"
+            Grid.Column="7"
+            Margin="8"
+            Click="LetterSelected"
+            Content="E"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonF"
+            Grid.Row="1"
+            Grid.Column="8"
+            Margin="8"
+            Click="LetterSelected"
+            Content="F"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonG"
+            Grid.Row="2"
+            Grid.Column="3"
+            Margin="8"
+            Click="LetterSelected"
+            Content="G"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonH"
+            Grid.Row="2"
+            Grid.Column="4"
+            Margin="8"
+            Click="LetterSelected"
+            Content="H"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonI"
+            Grid.Row="2"
+            Grid.Column="5"
+            Margin="8"
+            Click="LetterSelected"
+            Content="I"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonJ"
+            Grid.Row="2"
+            Grid.Column="6"
+            Margin="8"
+            Click="LetterSelected"
+            Content="J"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonK"
+            Grid.Row="2"
+            Grid.Column="7"
+            Margin="8"
+            Click="LetterSelected"
+            Content="K"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonL"
+            Grid.Row="2"
+            Grid.Column="8"
+            Margin="8"
+            Click="LetterSelected"
+            Content="L"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonM"
+            Grid.Row="3"
+            Grid.Column="3"
+            Margin="8"
+            Click="LetterSelected"
+            Content="M"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonN"
+            Grid.Row="3"
+            Grid.Column="4"
+            Margin="8"
+            Click="LetterSelected"
+            Content="N"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonO"
+            Grid.Row="3"
+            Grid.Column="5"
+            Margin="8"
+            Click="LetterSelected"
+            Content="O"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonP"
+            Grid.Row="3"
+            Grid.Column="6"
+            Margin="8"
+            Click="LetterSelected"
+            Content="P"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonQ"
+            Grid.Row="3"
+            Grid.Column="7"
+            Margin="8"
+            Click="LetterSelected"
+            Content="Q"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonR"
+            Grid.Row="3"
+            Grid.Column="8"
+            Margin="8"
+            Click="LetterSelected"
+            Content="R"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonS"
+            Grid.Row="4"
+            Grid.Column="3"
+            Margin="8"
+            Click="LetterSelected"
+            Content="S"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonT"
+            Grid.Row="4"
+            Grid.Column="4"
+            Margin="8"
+            Click="LetterSelected"
+            Content="T"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonU"
+            Grid.Row="4"
+            Grid.Column="5"
+            Margin="8"
+            Click="LetterSelected"
+            Content="U"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonV"
+            Grid.Row="4"
+            Grid.Column="6"
+            Margin="8"
+            Click="LetterSelected"
+            Content="V"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonW"
+            Grid.Row="4"
+            Grid.Column="7"
+            Margin="8"
+            Click="LetterSelected"
+            Content="W"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonX"
+            Grid.Row="4"
+            Grid.Column="8"
+            Margin="8"
+            Click="LetterSelected"
+            Content="X"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonY"
+            Grid.Row="5"
+            Grid.Column="3"
+            Margin="8"
+            Click="LetterSelected"
+            Content="Y"
+            FontSize="18"
+            IsEnabled="False" />
+
+    <Button Name="buttonZ"
+            Grid.Row="5"
+            Grid.Column="4"
+            Margin="8"
+            Click="LetterSelected"
+            Content="Z"
+            FontSize="18"
+            IsEnabled="False" />
+
+  </Grid>
+</Window>
